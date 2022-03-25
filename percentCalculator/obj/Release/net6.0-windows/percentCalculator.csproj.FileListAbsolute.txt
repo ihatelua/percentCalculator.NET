@@ -1,0 +1,17 @@
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\bin\Release\net6.0-windows\percentCalculator.exe
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\bin\Release\net6.0-windows\percentCalculator.deps.json
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\bin\Release\net6.0-windows\percentCalculator.runtimeconfig.json
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\bin\Release\net6.0-windows\percentCalculator.dll
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\bin\Release\net6.0-windows\percentCalculator.pdb
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.csproj.AssemblyReference.cache
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.Form1.resources
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.csproj.GenerateResource.cache
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.GeneratedMSBuildEditorConfig.editorconfig
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.AssemblyInfoInputs.cache
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.AssemblyInfo.cs
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.csproj.CoreCompileInputs.cache
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.dll
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\refint\percentCalculator.dll
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.pdb
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\percentCalculator.genruntimeconfig.cache
+E:\__개인\percentCalculator(VB C#)\percentCalculator\percentCalculator\obj\Release\net6.0-windows\ref\percentCalculator.dll
