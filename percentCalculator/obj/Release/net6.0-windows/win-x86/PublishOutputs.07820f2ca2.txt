@@ -1,0 +1,2 @@
+E:\_dev\percentCalculator\percentCalculator\bin\Release\net6.0-windows\publish\win-x86\percentCalculator.pdb
+E:\_dev\percentCalculator\percentCalculator\bin\Release\net6.0-windows\publish\win-x86\percentCalculator.exe
