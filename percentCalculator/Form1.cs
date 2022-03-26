@@ -10,6 +10,7 @@ namespace percentCalculator
         private void Form1_Load(object sender, EventArgs e)
         {
             pointInDiRatioCheck.SelectedIndex = 0;
+            this.ActiveControl = resetButton;
         }
 
         /*
@@ -31,6 +32,7 @@ namespace percentCalculator
          * 
          */
 
+        
         // 초기화 버튼 클릭
         private void resetButton_click(object sender, EventArgs e)
         {
@@ -59,27 +61,27 @@ namespace percentCalculator
             this.TopMost = !this.TopMost;
         }
 
-
         // 숫자만 입력받기
         private void onlyNumber(object sender, KeyPressEventArgs e)
         {
-            // '.' 갯수구하기
-            string[] StringArray = (sender as TextBox).Text.Split(new string[] { "." }, StringSplitOptions.None);
-            int pointNum = StringArray.Length - 1;
-
-            //숫자만 입력되도록 필터링
-            if ((char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)) || (e.KeyChar == '.'))
+            // 숫자와 '.' 허용
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                 (e.KeyChar != '.'))
             {
-                if (pointNum < 2)
-                {
-                    e.Handled = false;
-                }
+                e.Handled = true;
+            }
+
+            // 오직 '.' 1개만 허용
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
 
         // 전체값 일정비율 계산 이벤트
         private void totalRatioTextChanged(object sender, EventArgs e)
         {
+            // 값 가져오기
             double result = 0;
             double totalRatioText1_value = 0;
             double totalRatioText2_value = 0;
@@ -94,13 +96,235 @@ namespace percentCalculator
                 double.TryParse((sender as TextBox).Text, out totalRatioText2_value);
             }
 
-            result = totalRatioText1_value * (totalRatioText2_value / 100);
+            // 결과계산
+            double divCal = totalRatioText2_value / 100;
+            if (!double.IsNaN(divCal)) // 널 체크
+            {
+                if (double.IsInfinity(divCal)) // 무한 체크
+                {
+                    result = 0;
+                }
+                else
+                {
+                    result = totalRatioText1_value * divCal;
+                }
+            }
+            else
+            {
+                result = 0;
+            }
 
+            // 출력
             string format = string.Format("{0:0.00} ", result);
-
             totalRatioText3.Text = format;
         }
 
-        
+        // 전체값 일정값 비율 계산 이벤트
+        private void totalValuesTextChanged(object sender, EventArgs e)
+        {
+            // 값 가져오기
+            double result = 0;
+            double totalValuesText1_value = 0;
+            double totalValuesText2_value = 0;
+            if ((sender as TextBox).Name == "totalValuesText1")
+            {
+                double.TryParse((sender as TextBox).Text, out totalValuesText1_value);
+                double.TryParse(totalValuesText2.Text, out totalValuesText2_value);
+            }
+            else
+            {
+                double.TryParse(totalValuesText1.Text, out totalValuesText1_value);
+                double.TryParse((sender as TextBox).Text, out totalValuesText2_value);
+            }
+            
+            // 결과계산
+            double divCal = totalValuesText2_value / totalValuesText1_value;
+            if (!double.IsNaN(divCal)) // 널 체크
+            {
+                if (double.IsInfinity(divCal)) // 무한 체크
+                {
+                    result = 0;
+                }
+                else
+                {
+                    result = 100 * divCal;
+                }   
+            }
+            else
+            {
+                result = 0;
+            }
+            
+            // 출력
+            string format = string.Format("{0:0.00} ", result);
+            totalValuesText3.Text = format;
+        }
+
+
+        // 기준값 얼마나 증가/감소했는지 계산 이벤트
+        private void pointInDeTextChanged(object sender, EventArgs e)
+        {
+            // 값 가져오기
+            double result = 0;
+            double pointInDeText1_value = 0;
+            double pointInDeText2_value = 0;
+            if ((sender as TextBox).Name == "pointInDeText1")
+            {
+                double.TryParse((sender as TextBox).Text, out pointInDeText1_value);
+                double.TryParse(pointInDeText2.Text, out pointInDeText2_value);
+            }
+            else
+            {
+                double.TryParse(pointInDeText1.Text, out pointInDeText1_value);
+                double.TryParse((sender as TextBox).Text, out pointInDeText2_value);
+            }
+
+            // 결과계산
+            // 빈값일때 증가/감소 라벨 지우기
+            if(pointInDeText1_value == 0 || pointInDeText2_value == 0)
+            {
+                pointInDeLabel4.Text = "";
+            }
+
+            double divCal = ((pointInDeText2_value - pointInDeText1_value) / pointInDeText1_value);
+            if (!double.IsNaN(divCal)) // 널 체크
+            {
+                if (double.IsInfinity(divCal)) // 무한 체크
+                {
+                    result = 0;
+                }
+                else
+                {
+                    result = divCal * 100;
+                }
+            } 
+            else
+            {
+                result = 0;
+            }
+
+            // 출력
+            if(result < 0)
+            {
+                pointInDeLabel4.Text = "감소";
+                pointInDeLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f58222");
+            }
+            else
+            {
+                pointInDeLabel4.Text = "증가";
+                pointInDeLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f58222");
+            }
+
+            string format = string.Format("{0:0.00} ", Math.Abs(result));
+            pointInDeText3.Text = format;
+        }
+
+
+        // 기준값 일정비율 계산 이벤트
+        private void pointInDiRatioTextChanged(object sender, EventArgs e)
+        {
+            // 값 가져오기
+            double result = 0;
+            double pointInDiRatioText1_value = 0;
+            double pointInDiRatioText2_value = 0;
+            int pointInDiRatioCheck_value = 0;
+            if ((sender as TextBox).Name == "pointInDiRatioText1")
+            {
+                double.TryParse((sender as TextBox).Text, out pointInDiRatioText1_value);
+                double.TryParse(pointInDiRatioText2.Text, out pointInDiRatioText2_value);
+                String selectText = pointInDiRatioCheck.SelectedItem.ToString();
+                if (selectText.Equals("증가"))
+                {
+                    pointInDiRatioCheck_value = 1;
+                }
+                else
+                {
+                    pointInDiRatioCheck_value = -1;
+                }
+            }
+            else
+            {
+                double.TryParse(pointInDiRatioText1.Text, out pointInDiRatioText1_value);
+                double.TryParse((sender as TextBox).Text, out pointInDiRatioText2_value);
+
+                String selectText = pointInDiRatioCheck.SelectedItem.ToString();
+                if (selectText.Equals("증가"))
+                {
+                    pointInDiRatioCheck_value = 1;
+                }
+                else
+                {
+                    pointInDiRatioCheck_value = -1;
+                }
+            }
+
+
+            // 결과계산
+            double divCal = pointInDiRatioText1_value * (pointInDiRatioText2_value / 100);
+            if (!double.IsNaN(divCal)) // 널 체크
+            {
+                if (double.IsInfinity(divCal)) // 무한 체크
+                {
+                    result = 0;
+                }
+                else
+                {
+                    result = pointInDiRatioText1_value + (divCal * pointInDiRatioCheck_value);
+                }
+            }
+            else
+            {
+                result = 0;
+            }
+
+            // 출력
+            string format = string.Format("{0:0.00} ", Math.Abs(result));
+            pointInDiRatioText3.Text = format;
+        }
+
+        private void pointInDiRatioComboChanged(object sender, EventArgs e)
+        {
+            // 값 가져오기
+            double result = 0;
+            double pointInDiRatioText1_value = 0;
+            double pointInDiRatioText2_value = 0;
+            int pointInDiRatioCheck_value = 0;
+
+            double.TryParse(pointInDiRatioText1.Text, out pointInDiRatioText1_value);
+            double.TryParse(pointInDiRatioText2.Text, out pointInDiRatioText2_value);
+            String selectText = (sender as ComboBox).SelectedItem.ToString();
+            if (selectText.Equals("증가"))
+            {
+                pointInDiRatioCheck_value = 1;
+            }
+            else
+            {
+                pointInDiRatioCheck_value = -1;
+            }
+
+            // 결과계산
+            double divCal = pointInDiRatioText1_value * (pointInDiRatioText2_value / 100);
+            if (!double.IsNaN(divCal)) // 널 체크
+            {
+                if (double.IsInfinity(divCal)) // 무한 체크
+                {
+                    result = 0;
+                }
+                else
+                {
+                    result = pointInDiRatioText1_value + (divCal * pointInDiRatioCheck_value);
+                }
+            }
+            else
+            {
+                result = 0;
+            }
+
+            // 출력
+            string format = string.Format("{0:0.00} ", Math.Abs(result));
+            pointInDiRatioText3.Text = format;
+        }
     }
+
+    
 }

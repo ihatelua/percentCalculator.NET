@@ -8,24 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ponyo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\trace\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\__개인\\percentCalculator(VB C#)\\percentCalculator\\percentCalculator\\percentCalculator.csproj",
+      "projectUniqueName": "E:\\_dev\\percentCalculator\\percentCalculator\\percentCalculator.csproj",
       "projectName": "percentCalculator",
-      "projectPath": "E:\\__개인\\percentCalculator(VB C#)\\percentCalculator\\percentCalculator\\percentCalculator.csproj",
-      "packagesPath": "C:\\Users\\ponyo\\.nuget\\packages\\",
-      "outputPath": "E:\\__개인\\percentCalculator(VB C#)\\percentCalculator\\percentCalculator\\obj\\",
+      "projectPath": "E:\\_dev\\percentCalculator\\percentCalculator\\percentCalculator.csproj",
+      "packagesPath": "C:\\Users\\trace\\.nuget\\packages\\",
+      "outputPath": "E:\\_dev\\percentCalculator\\percentCalculator\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ponyo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\trace\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

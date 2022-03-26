@@ -43,24 +43,26 @@
             this.totalValuesLabel1 = new System.Windows.Forms.Label();
             this.totalValuesText1 = new System.Windows.Forms.TextBox();
             this.totalValuesTitle = new System.Windows.Forms.Label();
-            this.pointInDeLabel3 = new System.Windows.Forms.Label();
+            this.pointInDeLabel5 = new System.Windows.Forms.Label();
             this.pointInDeText3 = new System.Windows.Forms.TextBox();
             this.pointInDeLabel2 = new System.Windows.Forms.Label();
             this.pointInDeText2 = new System.Windows.Forms.TextBox();
             this.pointInDeLabel1 = new System.Windows.Forms.Label();
             this.pointInDeText1 = new System.Windows.Forms.TextBox();
             this.pointInDeTitle = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.pointInDiRatioLabel4 = new System.Windows.Forms.Label();
             this.pointInDiRatioText3 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.pointInDiRatioLabel2 = new System.Windows.Forms.Label();
             this.pointInDiRatioText2 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.pointInDiRatioLabel1 = new System.Windows.Forms.Label();
             this.pointInDiRatioText1 = new System.Windows.Forms.TextBox();
             this.pointInDiRatioTitle = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.pointInDiRatioLabel3 = new System.Windows.Forms.Label();
             this.pointInDiRatioCheck = new System.Windows.Forms.ComboBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.fixCheckBox = new System.Windows.Forms.CheckBox();
+            this.pointInDeLabel3 = new System.Windows.Forms.Label();
+            this.pointInDeLabel4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // totalRatioTitle
@@ -75,6 +77,7 @@
             // 
             // totalRatioText1
             // 
+            this.totalRatioText1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.totalRatioText1.Location = new System.Drawing.Point(25, 43);
             this.totalRatioText1.Name = "totalRatioText1";
             this.totalRatioText1.PlaceholderText = "전체값 100 ";
@@ -117,13 +120,14 @@
             // 
             // totalRatioText3
             // 
+            this.totalRatioText3.Enabled = false;
             this.totalRatioText3.Location = new System.Drawing.Point(370, 43);
             this.totalRatioText3.Name = "totalRatioText3";
             this.totalRatioText3.PlaceholderText = "일부값 20";
-            this.totalRatioText3.ReadOnly = true;
-            this.totalRatioText3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.totalRatioText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.totalRatioText3.Size = new System.Drawing.Size(100, 23);
             this.totalRatioText3.TabIndex = 5;
+            this.totalRatioText3.TabStop = false;
             this.totalRatioText3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // totalRatioLabel3
@@ -140,19 +144,20 @@
             this.totalValuesLabel3.AutoSize = true;
             this.totalValuesLabel3.Location = new System.Drawing.Point(476, 111);
             this.totalValuesLabel3.Name = "totalValuesLabel3";
-            this.totalValuesLabel3.Size = new System.Drawing.Size(46, 15);
+            this.totalValuesLabel3.Size = new System.Drawing.Size(60, 15);
             this.totalValuesLabel3.TabIndex = 13;
-            this.totalValuesLabel3.Text = "입니다.";
+            this.totalValuesLabel3.Text = "% 입니다.";
             // 
             // totalValuesText3
             // 
+            this.totalValuesText3.Enabled = false;
             this.totalValuesText3.Location = new System.Drawing.Point(370, 106);
             this.totalValuesText3.Name = "totalValuesText3";
             this.totalValuesText3.PlaceholderText = "비율값 20";
-            this.totalValuesText3.ReadOnly = true;
-            this.totalValuesText3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.totalValuesText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.totalValuesText3.Size = new System.Drawing.Size(100, 23);
             this.totalValuesText3.TabIndex = 12;
+            this.totalValuesText3.TabStop = false;
             this.totalValuesText3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // totalValuesLabel2
@@ -173,6 +178,7 @@
             this.totalValuesText2.Size = new System.Drawing.Size(100, 23);
             this.totalValuesText2.TabIndex = 10;
             this.totalValuesText2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalValuesText2.TextChanged += new System.EventHandler(this.totalValuesTextChanged);
             this.totalValuesText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
             // 
             // totalValuesLabel1
@@ -193,6 +199,7 @@
             this.totalValuesText1.Size = new System.Drawing.Size(100, 23);
             this.totalValuesText1.TabIndex = 8;
             this.totalValuesText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalValuesText1.TextChanged += new System.EventHandler(this.totalValuesTextChanged);
             this.totalValuesText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
             // 
             // totalValuesTitle
@@ -205,24 +212,25 @@
             this.totalValuesTitle.TabIndex = 7;
             this.totalValuesTitle.Text = "전체값의 일정 값에 해당하는 비율을 계산합니다.";
             // 
-            // pointInDeLabel3
+            // pointInDeLabel5
             // 
-            this.pointInDeLabel3.AutoSize = true;
-            this.pointInDeLabel3.Location = new System.Drawing.Point(476, 175);
-            this.pointInDeLabel3.Name = "pointInDeLabel3";
-            this.pointInDeLabel3.Size = new System.Drawing.Size(46, 15);
-            this.pointInDeLabel3.TabIndex = 20;
-            this.pointInDeLabel3.Text = "입니다.";
+            this.pointInDeLabel5.AutoSize = true;
+            this.pointInDeLabel5.Location = new System.Drawing.Point(485, 175);
+            this.pointInDeLabel5.Name = "pointInDeLabel5";
+            this.pointInDeLabel5.Size = new System.Drawing.Size(46, 15);
+            this.pointInDeLabel5.TabIndex = 20;
+            this.pointInDeLabel5.Text = "입니다.";
             // 
             // pointInDeText3
             // 
+            this.pointInDeText3.Enabled = false;
             this.pointInDeText3.Location = new System.Drawing.Point(370, 170);
             this.pointInDeText3.Name = "pointInDeText3";
             this.pointInDeText3.PlaceholderText = "증가값 50";
-            this.pointInDeText3.ReadOnly = true;
-            this.pointInDeText3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.pointInDeText3.Size = new System.Drawing.Size(100, 23);
+            this.pointInDeText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.pointInDeText3.Size = new System.Drawing.Size(64, 23);
             this.pointInDeText3.TabIndex = 19;
+            this.pointInDeText3.TabStop = false;
             this.pointInDeText3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pointInDeLabel2
@@ -243,6 +251,7 @@
             this.pointInDeText2.Size = new System.Drawing.Size(100, 23);
             this.pointInDeText2.TabIndex = 17;
             this.pointInDeText2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pointInDeText2.TextChanged += new System.EventHandler(this.pointInDeTextChanged);
             this.pointInDeText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
             // 
             // pointInDeLabel1
@@ -263,6 +272,7 @@
             this.pointInDeText1.Size = new System.Drawing.Size(100, 23);
             this.pointInDeText1.TabIndex = 15;
             this.pointInDeText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pointInDeText1.TextChanged += new System.EventHandler(this.pointInDeTextChanged);
             this.pointInDeText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
             // 
             // pointInDeTitle
@@ -275,34 +285,35 @@
             this.pointInDeTitle.TabIndex = 14;
             this.pointInDeTitle.Text = "기준값이 변경값으로 변화시 얼만큼 증가/감소 했는지 계산합니다.";
             // 
-            // label13
+            // pointInDiRatioLabel4
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(476, 242);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 15);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "입니다.";
+            this.pointInDiRatioLabel4.AutoSize = true;
+            this.pointInDiRatioLabel4.Location = new System.Drawing.Point(476, 242);
+            this.pointInDiRatioLabel4.Name = "pointInDiRatioLabel4";
+            this.pointInDiRatioLabel4.Size = new System.Drawing.Size(46, 15);
+            this.pointInDiRatioLabel4.TabIndex = 27;
+            this.pointInDiRatioLabel4.Text = "입니다.";
             // 
             // pointInDiRatioText3
             // 
+            this.pointInDiRatioText3.Enabled = false;
             this.pointInDiRatioText3.Location = new System.Drawing.Point(370, 237);
             this.pointInDiRatioText3.Name = "pointInDiRatioText3";
             this.pointInDiRatioText3.PlaceholderText = "변경값 120";
-            this.pointInDiRatioText3.ReadOnly = true;
-            this.pointInDiRatioText3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pointInDiRatioText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pointInDiRatioText3.Size = new System.Drawing.Size(100, 23);
             this.pointInDiRatioText3.TabIndex = 26;
+            this.pointInDiRatioText3.TabStop = false;
             this.pointInDiRatioText3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label14
+            // pointInDiRatioLabel2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(258, 242);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 15);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "%";
+            this.pointInDiRatioLabel2.AutoSize = true;
+            this.pointInDiRatioLabel2.Location = new System.Drawing.Point(258, 242);
+            this.pointInDiRatioLabel2.Name = "pointInDiRatioLabel2";
+            this.pointInDiRatioLabel2.Size = new System.Drawing.Size(17, 15);
+            this.pointInDiRatioLabel2.TabIndex = 25;
+            this.pointInDiRatioLabel2.Text = "%";
             // 
             // pointInDiRatioText2
             // 
@@ -313,16 +324,17 @@
             this.pointInDiRatioText2.Size = new System.Drawing.Size(70, 23);
             this.pointInDiRatioText2.TabIndex = 24;
             this.pointInDiRatioText2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pointInDiRatioText2.TextChanged += new System.EventHandler(this.pointInDiRatioTextChanged);
             this.pointInDiRatioText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
             // 
-            // label15
+            // pointInDiRatioLabel1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(131, 242);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(39, 15);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "이(가)";
+            this.pointInDiRatioLabel1.AutoSize = true;
+            this.pointInDiRatioLabel1.Location = new System.Drawing.Point(131, 242);
+            this.pointInDiRatioLabel1.Name = "pointInDiRatioLabel1";
+            this.pointInDiRatioLabel1.Size = new System.Drawing.Size(39, 15);
+            this.pointInDiRatioLabel1.TabIndex = 23;
+            this.pointInDiRatioLabel1.Text = "이(가)";
             // 
             // pointInDiRatioText1
             // 
@@ -333,6 +345,7 @@
             this.pointInDiRatioText1.Size = new System.Drawing.Size(100, 23);
             this.pointInDiRatioText1.TabIndex = 22;
             this.pointInDiRatioText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pointInDiRatioText1.TextChanged += new System.EventHandler(this.pointInDiRatioTextChanged);
             this.pointInDiRatioText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
             // 
             // pointInDiRatioTitle
@@ -345,14 +358,14 @@
             this.pointInDiRatioTitle.TabIndex = 21;
             this.pointInDiRatioTitle.Text = "기준값에서 일정 비율로 증가/감소한 결과를 계산합니다.";
             // 
-            // label17
+            // pointInDiRatioLabel3
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(331, 242);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(33, 15);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "% 는";
+            this.pointInDiRatioLabel3.AutoSize = true;
+            this.pointInDiRatioLabel3.Location = new System.Drawing.Point(331, 242);
+            this.pointInDiRatioLabel3.Name = "pointInDiRatioLabel3";
+            this.pointInDiRatioLabel3.Size = new System.Drawing.Size(33, 15);
+            this.pointInDiRatioLabel3.TabIndex = 29;
+            this.pointInDiRatioLabel3.Text = "% 는";
             // 
             // pointInDiRatioCheck
             // 
@@ -367,6 +380,7 @@
             this.pointInDiRatioCheck.Name = "pointInDiRatioCheck";
             this.pointInDiRatioCheck.Size = new System.Drawing.Size(52, 23);
             this.pointInDiRatioCheck.TabIndex = 30;
+            this.pointInDiRatioCheck.TextChanged += new System.EventHandler(this.pointInDiRatioComboChanged);
             // 
             // resetButton
             // 
@@ -381,7 +395,7 @@
             // fixCheckBox
             // 
             this.fixCheckBox.AutoSize = true;
-            this.fixCheckBox.Location = new System.Drawing.Point(418, 281);
+            this.fixCheckBox.Location = new System.Drawing.Point(423, 280);
             this.fixCheckBox.Name = "fixCheckBox";
             this.fixCheckBox.Size = new System.Drawing.Size(106, 19);
             this.fixCheckBox.TabIndex = 32;
@@ -389,24 +403,44 @@
             this.fixCheckBox.UseVisualStyleBackColor = true;
             this.fixCheckBox.CheckedChanged += new System.EventHandler(this.fixCheckBox_CheckedChanged);
             // 
+            // pointInDeLabel3
+            // 
+            this.pointInDeLabel3.AutoSize = true;
+            this.pointInDeLabel3.ForeColor = System.Drawing.Color.Black;
+            this.pointInDeLabel3.Location = new System.Drawing.Point(438, 175);
+            this.pointInDeLabel3.Name = "pointInDeLabel3";
+            this.pointInDeLabel3.Size = new System.Drawing.Size(17, 15);
+            this.pointInDeLabel3.TabIndex = 33;
+            this.pointInDeLabel3.Text = "%";
+            // 
+            // pointInDeLabel4
+            // 
+            this.pointInDeLabel4.AutoSize = true;
+            this.pointInDeLabel4.Location = new System.Drawing.Point(458, 175);
+            this.pointInDeLabel4.Name = "pointInDeLabel4";
+            this.pointInDeLabel4.Size = new System.Drawing.Size(0, 15);
+            this.pointInDeLabel4.TabIndex = 34;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(536, 315);
+            this.ClientSize = new System.Drawing.Size(541, 314);
+            this.Controls.Add(this.pointInDeLabel4);
+            this.Controls.Add(this.pointInDeLabel3);
             this.Controls.Add(this.fixCheckBox);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.pointInDiRatioCheck);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.pointInDiRatioLabel3);
+            this.Controls.Add(this.pointInDiRatioLabel4);
             this.Controls.Add(this.pointInDiRatioText3);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.pointInDiRatioLabel2);
             this.Controls.Add(this.pointInDiRatioText2);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.pointInDiRatioLabel1);
             this.Controls.Add(this.pointInDiRatioText1);
             this.Controls.Add(this.pointInDiRatioTitle);
-            this.Controls.Add(this.pointInDeLabel3);
+            this.Controls.Add(this.pointInDeLabel5);
             this.Controls.Add(this.pointInDeText3);
             this.Controls.Add(this.pointInDeLabel2);
             this.Controls.Add(this.pointInDeText2);
@@ -427,6 +461,7 @@
             this.Controls.Add(this.totalRatioLabel1);
             this.Controls.Add(this.totalRatioText1);
             this.Controls.Add(this.totalRatioTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "퍼센트 계산기";
@@ -452,23 +487,25 @@
         private Label totalValuesLabel1;
         private TextBox totalValuesText1;
         private Label totalValuesTitle;
-        private Label pointInDeLabel3;
+        private Label pointInDeLabel5;
         private TextBox pointInDeText3;
         private Label pointInDeLabel2;
         private TextBox pointInDeText2;
         private Label pointInDeLabel1;
         private TextBox pointInDeText1;
         private Label pointInDeTitle;
-        private Label label13;
+        private Label pointInDiRatioLabel4;
         private TextBox pointInDiRatioText3;
-        private Label label14;
+        private Label pointInDiRatioLabel2;
         private TextBox pointInDiRatioText2;
-        private Label label15;
+        private Label pointInDiRatioLabel1;
         private TextBox pointInDiRatioText1;
         private Label pointInDiRatioTitle;
-        private Label label17;
+        private Label pointInDiRatioLabel3;
         private ComboBox pointInDiRatioCheck;
         private Button resetButton;
         private CheckBox fixCheckBox;
+        private Label pointInDeLabel3;
+        private Label pointInDeLabel4;
     }
 }
