@@ -10,29 +10,10 @@ namespace percentCalculator
         private void Form1_Load(object sender, EventArgs e)
         {
             pointInDiRatioCheck.SelectedIndex = 0;
+            multiLang.SelectedIndex = 0;
             this.ActiveControl = resetButton;
         }
 
-        /*
-         *
-         *      result_a: function() {
-                    return "" === String(this.num_a_1) || "" === String(this.num_a_2) ? "" : t(this.num_a_1 * (this.num_a_2 / 100), 2)
-                },
-                result_b: function() {
-                    return "" === String(this.num_b_1) || "" === String(this.num_b_2) ? "" : t(100 * this.num_b_2 / this.num_b_1, 2)
-                },
-                result_c: function() {
-                    if ("" === String(this.num_c_1) || "" === String(this.num_c_2)) return this.result_c_t = "", "";
-                    var n = t((this.num_c_2 - this.num_c_1) / this.num_c_1 * 100, 2);
-                    return this.result_c_t = n > 0 ? "증가" : n < 0 ? "감소" : "", Math.abs(n)
-                },
-                result_d: function() {
-                    return "" === String(this.num_d_1) || "" === String(this.num_d_2) ? "" : t(parseFloat(this.num_d_1) + this.num_d_1 * (this.num_d_2 / 100) * this.num_d_3, 2)
-                }
-         * 
-         */
-
-        
         // 초기화 버튼 클릭
         private void resetButton_click(object sender, EventArgs e)
         {
@@ -52,6 +33,9 @@ namespace percentCalculator
             pointInDeText3.Text = string.Empty;
             pointInDiRatioText3.Text = string.Empty;
 
+            // 증가/감소 라벨값 삭제
+            pointInDeLabel4.Text = string.Empty;
+
             pointInDiRatioCheck.SelectedIndex = 0;
         }
 
@@ -59,6 +43,58 @@ namespace percentCalculator
         private void fixCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             this.TopMost = !this.TopMost;
+        }
+
+        // 숫자포맷 이벤트
+        private void numberFormatCheckChanged(object sender, EventArgs e)
+        {
+            if((sender as CheckBox).Checked)
+            {
+                // 모든 텍스트박스 숫자포맷 바꾸기
+                foreach (Control control in this.Controls)
+                {
+                    if (control is TextBox)
+                    {
+                        if (!control.Name.Equals("totalRatioText3") &&
+                            !control.Name.Equals("totalValuesText3") &&
+                            !control.Name.Equals("pointInDeText3") &&
+                            !control.Name.Equals("pointInDiRatioText3"))
+                        {
+                            TextBox textBox = (TextBox)control;
+                            double convertNum = 0;
+                            double.TryParse(textBox.Text, out convertNum);
+                            if (textBox != null && convertNum != 0) textBox.Text = string.Format("{0:#,##0}", convertNum);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // 모든 텍스트박스 숫자포맷 바꾸기
+                foreach (Control control in this.Controls)
+                {
+                    if (control is TextBox)
+                    {
+                        if (!control.Name.Equals("totalRatioText3") &&
+                            !control.Name.Equals("totalValuesText3") &&
+                            !control.Name.Equals("pointInDeText3") &&
+                            !control.Name.Equals("pointInDiRatioText3"))
+                        {
+                            TextBox textBox = (TextBox)control;
+                            double convertNum = 0;
+                            double.TryParse(textBox.Text, out convertNum);
+                            if (textBox != null && convertNum != 0) textBox.Text = string.Format("{0:0.00} ", convertNum);
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        // 다국어 이벤트
+        private void multiLangChanged(object sender, EventArgs e)
+        {
+
         }
 
         // 숫자만 입력받기
@@ -115,7 +151,16 @@ namespace percentCalculator
             }
 
             // 출력
-            string format = string.Format("{0:0.00} ", result);
+            string format = "";
+            if (numberFormatCheck.Checked)
+            {
+                format = string.Format("{0:#,##0.00} ", result);
+            }
+            else
+            {
+                format = string.Format("{0:0.00} ", result);
+            }
+            
             totalRatioText3.Text = format;
         }
 
@@ -154,7 +199,7 @@ namespace percentCalculator
             {
                 result = 0;
             }
-            
+
             // 출력
             string format = string.Format("{0:0.00} ", result);
             totalValuesText3.Text = format;
@@ -278,7 +323,15 @@ namespace percentCalculator
             }
 
             // 출력
-            string format = string.Format("{0:0.00} ", Math.Abs(result));
+            string format = "";
+            if (numberFormatCheck.Checked)
+            {
+                format = string.Format("{0:#,##0.00} ", Math.Abs(result));
+            }
+            else
+            {
+                format = string.Format("{0:0.00} ", Math.Abs(result));
+            }
             pointInDiRatioText3.Text = format;
         }
 
@@ -321,9 +374,19 @@ namespace percentCalculator
             }
 
             // 출력
-            string format = string.Format("{0:0.00} ", Math.Abs(result));
+            string format = "";
+            if (numberFormatCheck.Checked)
+            {
+                format = string.Format("{0:#,##0.00} ", Math.Abs(result));
+            }
+            else
+            {
+                format = string.Format("{0:0.00} ", Math.Abs(result));
+            }
             pointInDiRatioText3.Text = format;
         }
+
+        
     }
 
     

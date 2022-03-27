@@ -63,6 +63,8 @@
             this.fixCheckBox = new System.Windows.Forms.CheckBox();
             this.pointInDeLabel3 = new System.Windows.Forms.Label();
             this.pointInDeLabel4 = new System.Windows.Forms.Label();
+            this.numberFormatCheck = new System.Windows.Forms.CheckBox();
+            this.multiLang = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // totalRatioTitle
@@ -421,12 +423,40 @@
             this.pointInDeLabel4.Size = new System.Drawing.Size(0, 15);
             this.pointInDeLabel4.TabIndex = 34;
             // 
+            // numberFormatCheck
+            // 
+            this.numberFormatCheck.AutoSize = true;
+            this.numberFormatCheck.Location = new System.Drawing.Point(339, 280);
+            this.numberFormatCheck.Name = "numberFormatCheck";
+            this.numberFormatCheck.Size = new System.Drawing.Size(78, 19);
+            this.numberFormatCheck.TabIndex = 35;
+            this.numberFormatCheck.Text = "숫자 포맷";
+            this.numberFormatCheck.UseVisualStyleBackColor = true;
+            this.numberFormatCheck.CheckedChanged += new System.EventHandler(this.numberFormatCheckChanged);
+            // 
+            // multiLang
+            // 
+            this.multiLang.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.multiLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.multiLang.FormattingEnabled = true;
+            this.multiLang.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.multiLang.Items.AddRange(new object[] {
+            "한국어",
+            "english"});
+            this.multiLang.Location = new System.Drawing.Point(106, 280);
+            this.multiLang.Name = "multiLang";
+            this.multiLang.Size = new System.Drawing.Size(64, 23);
+            this.multiLang.TabIndex = 36;
+            this.multiLang.TextChanged += new System.EventHandler(this.multiLangChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(541, 314);
+            this.Controls.Add(this.multiLang);
+            this.Controls.Add(this.numberFormatCheck);
             this.Controls.Add(this.pointInDeLabel4);
             this.Controls.Add(this.pointInDeLabel3);
             this.Controls.Add(this.fixCheckBox);
@@ -507,5 +537,7 @@
         private CheckBox fixCheckBox;
         private Label pointInDeLabel3;
         private Label pointInDeLabel4;
+        private CheckBox numberFormatCheck;
+        private ComboBox multiLang;
     }
 }
