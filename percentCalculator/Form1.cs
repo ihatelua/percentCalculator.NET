@@ -12,6 +12,9 @@ namespace percentCalculator
             pointInDiRatioCheck.SelectedIndex = 0;
             multiLang.SelectedIndex = 0;
             this.ActiveControl = resetButton;
+
+
+            multiLang.Visible = false;  // 미구현
         }
 
         // 초기화 버튼 클릭
@@ -83,7 +86,7 @@ namespace percentCalculator
                             TextBox textBox = (TextBox)control;
                             double convertNum = 0;
                             double.TryParse(textBox.Text, out convertNum);
-                            if (textBox != null && convertNum != 0) textBox.Text = string.Format("{0:0.00} ", convertNum);
+                            if (textBox != null && convertNum != 0) textBox.Text = string.Format("{0:0} ", convertNum);
                         }
                     }
                 }
@@ -123,7 +126,7 @@ namespace percentCalculator
             double totalRatioText2_value = 0;
             if((sender as TextBox).Name == "totalRatioText1")
             {
-                double.TryParse((sender as TextBox).Text, out totalRatioText1_value);
+                double.TryParse((sender as TextBox).Text.Replace(",", ""), out totalRatioText1_value);
                 double.TryParse(totalRatioText2.Text, out totalRatioText2_value);
             }
             else
@@ -209,6 +212,8 @@ namespace percentCalculator
         // 기준값 얼마나 증가/감소했는지 계산 이벤트
         private void pointInDeTextChanged(object sender, EventArgs e)
         {
+            bool labelCheck = true;
+
             // 값 가져오기
             double result = 0;
             double pointInDeText1_value = 0;
@@ -217,18 +222,26 @@ namespace percentCalculator
             {
                 double.TryParse((sender as TextBox).Text, out pointInDeText1_value);
                 double.TryParse(pointInDeText2.Text, out pointInDeText2_value);
+                if ((sender as TextBox).Text.Equals("") || pointInDeText2.Text.Equals(""))
+                {
+                    labelCheck = false;
+                }
             }
             else
             {
                 double.TryParse(pointInDeText1.Text, out pointInDeText1_value);
                 double.TryParse((sender as TextBox).Text, out pointInDeText2_value);
+                if (pointInDeText1.Text.Equals("") || (sender as TextBox).Text.Equals(""))
+                {
+                    labelCheck = false;
+                }
             }
 
             // 결과계산
             // 빈값일때 증가/감소 라벨 지우기
             if(pointInDeText1_value == 0 || pointInDeText2_value == 0)
             {
-                pointInDeLabel4.Text = "";
+                pointInDeLabel4.Text = string.Empty;
             }
 
             double divCal = ((pointInDeText2_value - pointInDeText1_value) / pointInDeText1_value);
@@ -249,15 +262,22 @@ namespace percentCalculator
             }
 
             // 출력
-            if(result < 0)
+            if (labelCheck)
             {
-                pointInDeLabel4.Text = "감소";
-                pointInDeLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f58222");
+                if (result < 0)
+                {
+                    pointInDeLabel4.Text = "감소";
+                    pointInDeLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f58222");
+                }
+                else
+                {
+                    pointInDeLabel4.Text = "증가";
+                    pointInDeLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f58222");
+                }
             }
             else
             {
-                pointInDeLabel4.Text = "증가";
-                pointInDeLabel4.ForeColor = System.Drawing.ColorTranslator.FromHtml("#f58222");
+                pointInDeLabel4.Text = string.Empty;
             }
 
             string format = string.Format("{0:0.00} ", Math.Abs(result));
@@ -277,6 +297,7 @@ namespace percentCalculator
             {
                 double.TryParse((sender as TextBox).Text, out pointInDiRatioText1_value);
                 double.TryParse(pointInDiRatioText2.Text, out pointInDiRatioText2_value);
+
                 String selectText = pointInDiRatioCheck.SelectedItem.ToString();
                 if (selectText.Equals("증가"))
                 {
@@ -386,7 +407,18 @@ namespace percentCalculator
             pointInDiRatioText3.Text = format;
         }
 
-        
+        private void focusLeave(object sender, EventArgs e)
+        {
+            if (numberFormatCheck.Checked)
+            {
+                double convertNum = 0;
+                double.TryParse((sender as TextBox).Text.Replace(",", ""), out convertNum);
+                if(convertNum != 0)
+                {
+                    (sender as TextBox).Text = string.Format("{0:#,##0}", convertNum);
+                }
+            }
+        }
     }
 
     

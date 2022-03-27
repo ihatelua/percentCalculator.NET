@@ -89,6 +89,7 @@
             this.totalRatioText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.totalRatioText1.TextChanged += new System.EventHandler(this.totalRatioTextChanged);
             this.totalRatioText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
+            this.totalRatioText1.Leave += new System.EventHandler(this.focusLeave);
             // 
             // totalRatioLabel1
             // 
@@ -182,6 +183,7 @@
             this.totalValuesText2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.totalValuesText2.TextChanged += new System.EventHandler(this.totalValuesTextChanged);
             this.totalValuesText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
+            this.totalValuesText2.Leave += new System.EventHandler(this.focusLeave);
             // 
             // totalValuesLabel1
             // 
@@ -203,6 +205,7 @@
             this.totalValuesText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.totalValuesText1.TextChanged += new System.EventHandler(this.totalValuesTextChanged);
             this.totalValuesText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
+            this.totalValuesText1.Leave += new System.EventHandler(this.focusLeave);
             // 
             // totalValuesTitle
             // 
@@ -255,6 +258,7 @@
             this.pointInDeText2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pointInDeText2.TextChanged += new System.EventHandler(this.pointInDeTextChanged);
             this.pointInDeText2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
+            this.pointInDeText2.Leave += new System.EventHandler(this.focusLeave);
             // 
             // pointInDeLabel1
             // 
@@ -276,6 +280,7 @@
             this.pointInDeText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pointInDeText1.TextChanged += new System.EventHandler(this.pointInDeTextChanged);
             this.pointInDeText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
+            this.pointInDeText1.Leave += new System.EventHandler(this.focusLeave);
             // 
             // pointInDeTitle
             // 
@@ -349,6 +354,7 @@
             this.pointInDiRatioText1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pointInDiRatioText1.TextChanged += new System.EventHandler(this.pointInDiRatioTextChanged);
             this.pointInDiRatioText1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.onlyNumber);
+            this.pointInDiRatioText1.Leave += new System.EventHandler(this.focusLeave);
             // 
             // pointInDiRatioTitle
             // 
