@@ -36,7 +36,7 @@ namespace percentCalculator
             pointInDeText3.Text = string.Empty;
             pointInDiRatioText3.Text = string.Empty;
 
-            // 증가/감소 라벨값 삭제
+            // 증가/감소 라벨값 삭제 - v1.1.0 fixed
             pointInDeLabel4.Text = string.Empty;
 
             pointInDiRatioCheck.SelectedIndex = 0;
@@ -239,7 +239,7 @@ namespace percentCalculator
 
             // 결과계산
             // 빈값일때 증가/감소 라벨 지우기
-            if(pointInDeText1_value == 0 || pointInDeText2_value == 0)
+            if (pointInDeText1_value == 0 || pointInDeText2_value == 0)
             {
                 pointInDeLabel4.Text = string.Empty;
             }
@@ -262,7 +262,7 @@ namespace percentCalculator
             }
 
             // 출력
-            if (labelCheck)
+            if (labelCheck && result != 0) // 값을 '0'으로 넣었을 때도 증가/감소 라벨이 보이지않도록 수정 - v1.1.1 fixed
             {
                 if (result < 0)
                 {
