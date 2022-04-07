@@ -76,9 +76,11 @@
             this.totalRatioTitle.Size = new System.Drawing.Size(282, 15);
             this.totalRatioTitle.TabIndex = 0;
             this.totalRatioTitle.Text = "전체값에서 일정 비율에 해당하는 값을 계산합니다.";
+            this.totalRatioTitle.Click += new System.EventHandler(this.form1_click);
             // 
             // totalRatioText1
             // 
+            this.totalRatioText1.CausesValidation = false;
             this.totalRatioText1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.totalRatioText1.Location = new System.Drawing.Point(25, 43);
             this.totalRatioText1.Name = "totalRatioText1";
@@ -99,9 +101,11 @@
             this.totalRatioLabel1.Size = new System.Drawing.Size(19, 15);
             this.totalRatioLabel1.TabIndex = 2;
             this.totalRatioLabel1.Text = "의";
+            this.totalRatioLabel1.Click += new System.EventHandler(this.form1_click);
             // 
             // totalRatioText2
             // 
+            this.totalRatioText2.CausesValidation = false;
             this.totalRatioText2.Location = new System.Drawing.Point(187, 43);
             this.totalRatioText2.Name = "totalRatioText2";
             this.totalRatioText2.PlaceholderText = "비율값 20";
@@ -120,13 +124,14 @@
             this.totalRatioLabel2.Size = new System.Drawing.Size(33, 15);
             this.totalRatioLabel2.TabIndex = 4;
             this.totalRatioLabel2.Text = "% 는";
+            this.totalRatioLabel2.Click += new System.EventHandler(this.form1_click);
             // 
             // totalRatioText3
             // 
-            this.totalRatioText3.Enabled = false;
             this.totalRatioText3.Location = new System.Drawing.Point(370, 43);
             this.totalRatioText3.Name = "totalRatioText3";
             this.totalRatioText3.PlaceholderText = "일부값 20";
+            this.totalRatioText3.ReadOnly = true;
             this.totalRatioText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.totalRatioText3.Size = new System.Drawing.Size(100, 23);
             this.totalRatioText3.TabIndex = 5;
@@ -141,6 +146,7 @@
             this.totalRatioLabel3.Size = new System.Drawing.Size(46, 15);
             this.totalRatioLabel3.TabIndex = 6;
             this.totalRatioLabel3.Text = "입니다.";
+            this.totalRatioLabel3.Click += new System.EventHandler(this.form1_click);
             // 
             // totalValuesLabel3
             // 
@@ -150,13 +156,14 @@
             this.totalValuesLabel3.Size = new System.Drawing.Size(60, 15);
             this.totalValuesLabel3.TabIndex = 13;
             this.totalValuesLabel3.Text = "% 입니다.";
+            this.totalValuesLabel3.Click += new System.EventHandler(this.form1_click);
             // 
             // totalValuesText3
             // 
-            this.totalValuesText3.Enabled = false;
             this.totalValuesText3.Location = new System.Drawing.Point(370, 106);
             this.totalValuesText3.Name = "totalValuesText3";
             this.totalValuesText3.PlaceholderText = "비율값 20";
+            this.totalValuesText3.ReadOnly = true;
             this.totalValuesText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.totalValuesText3.Size = new System.Drawing.Size(100, 23);
             this.totalValuesText3.TabIndex = 12;
@@ -171,9 +178,11 @@
             this.totalValuesLabel2.Size = new System.Drawing.Size(39, 15);
             this.totalValuesLabel2.TabIndex = 11;
             this.totalValuesLabel2.Text = "(은)는";
+            this.totalValuesLabel2.Click += new System.EventHandler(this.form1_click);
             // 
             // totalValuesText2
             // 
+            this.totalValuesText2.CausesValidation = false;
             this.totalValuesText2.Location = new System.Drawing.Point(187, 106);
             this.totalValuesText2.Name = "totalValuesText2";
             this.totalValuesText2.PlaceholderText = "일부값 20";
@@ -193,9 +202,11 @@
             this.totalValuesLabel1.Size = new System.Drawing.Size(31, 15);
             this.totalValuesLabel1.TabIndex = 9;
             this.totalValuesLabel1.Text = "에서";
+            this.totalValuesLabel1.Click += new System.EventHandler(this.form1_click);
             // 
             // totalValuesText1
             // 
+            this.totalValuesText1.CausesValidation = false;
             this.totalValuesText1.Location = new System.Drawing.Point(25, 106);
             this.totalValuesText1.Name = "totalValuesText1";
             this.totalValuesText1.PlaceholderText = "전체값 100 ";
@@ -216,6 +227,7 @@
             this.totalValuesTitle.Size = new System.Drawing.Size(270, 15);
             this.totalValuesTitle.TabIndex = 7;
             this.totalValuesTitle.Text = "전체값의 일정 값에 해당하는 비율을 계산합니다.";
+            this.totalValuesTitle.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDeLabel5
             // 
@@ -225,13 +237,14 @@
             this.pointInDeLabel5.Size = new System.Drawing.Size(46, 15);
             this.pointInDeLabel5.TabIndex = 20;
             this.pointInDeLabel5.Text = "입니다.";
+            this.pointInDeLabel5.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDeText3
             // 
-            this.pointInDeText3.Enabled = false;
             this.pointInDeText3.Location = new System.Drawing.Point(370, 170);
             this.pointInDeText3.Name = "pointInDeText3";
             this.pointInDeText3.PlaceholderText = "증가값 50";
+            this.pointInDeText3.ReadOnly = true;
             this.pointInDeText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pointInDeText3.Size = new System.Drawing.Size(64, 23);
             this.pointInDeText3.TabIndex = 19;
@@ -246,9 +259,11 @@
             this.pointInDeLabel2.Size = new System.Drawing.Size(59, 15);
             this.pointInDeLabel2.TabIndex = 18;
             this.pointInDeLabel2.Text = "로 바뀌면";
+            this.pointInDeLabel2.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDeText2
             // 
+            this.pointInDeText2.CausesValidation = false;
             this.pointInDeText2.Location = new System.Drawing.Point(187, 170);
             this.pointInDeText2.Name = "pointInDeText2";
             this.pointInDeText2.PlaceholderText = "변경값 150";
@@ -268,9 +283,11 @@
             this.pointInDeLabel1.Size = new System.Drawing.Size(39, 15);
             this.pointInDeLabel1.TabIndex = 16;
             this.pointInDeLabel1.Text = "이(가)";
+            this.pointInDeLabel1.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDeText1
             // 
+            this.pointInDeText1.CausesValidation = false;
             this.pointInDeText1.Location = new System.Drawing.Point(25, 170);
             this.pointInDeText1.Name = "pointInDeText1";
             this.pointInDeText1.PlaceholderText = "기준값 100 ";
@@ -291,6 +308,7 @@
             this.pointInDeTitle.Size = new System.Drawing.Size(363, 15);
             this.pointInDeTitle.TabIndex = 14;
             this.pointInDeTitle.Text = "기준값이 변경값으로 변화시 얼만큼 증가/감소 했는지 계산합니다.";
+            this.pointInDeTitle.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDiRatioLabel4
             // 
@@ -300,13 +318,14 @@
             this.pointInDiRatioLabel4.Size = new System.Drawing.Size(46, 15);
             this.pointInDiRatioLabel4.TabIndex = 27;
             this.pointInDiRatioLabel4.Text = "입니다.";
+            this.pointInDiRatioLabel4.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDiRatioText3
             // 
-            this.pointInDiRatioText3.Enabled = false;
             this.pointInDiRatioText3.Location = new System.Drawing.Point(370, 237);
             this.pointInDiRatioText3.Name = "pointInDiRatioText3";
             this.pointInDiRatioText3.PlaceholderText = "변경값 120";
+            this.pointInDiRatioText3.ReadOnly = true;
             this.pointInDiRatioText3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pointInDiRatioText3.Size = new System.Drawing.Size(100, 23);
             this.pointInDiRatioText3.TabIndex = 26;
@@ -321,9 +340,11 @@
             this.pointInDiRatioLabel2.Size = new System.Drawing.Size(17, 15);
             this.pointInDiRatioLabel2.TabIndex = 25;
             this.pointInDiRatioLabel2.Text = "%";
+            this.pointInDiRatioLabel2.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDiRatioText2
             // 
+            this.pointInDiRatioText2.CausesValidation = false;
             this.pointInDiRatioText2.Location = new System.Drawing.Point(187, 237);
             this.pointInDiRatioText2.Name = "pointInDiRatioText2";
             this.pointInDiRatioText2.PlaceholderText = "비율값 20";
@@ -342,9 +363,11 @@
             this.pointInDiRatioLabel1.Size = new System.Drawing.Size(39, 15);
             this.pointInDiRatioLabel1.TabIndex = 23;
             this.pointInDiRatioLabel1.Text = "이(가)";
+            this.pointInDiRatioLabel1.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDiRatioText1
             // 
+            this.pointInDiRatioText1.CausesValidation = false;
             this.pointInDiRatioText1.Location = new System.Drawing.Point(25, 237);
             this.pointInDiRatioText1.Name = "pointInDiRatioText1";
             this.pointInDiRatioText1.PlaceholderText = "기준값 100 ";
@@ -365,6 +388,7 @@
             this.pointInDiRatioTitle.Size = new System.Drawing.Size(311, 15);
             this.pointInDiRatioTitle.TabIndex = 21;
             this.pointInDiRatioTitle.Text = "기준값에서 일정 비율로 증가/감소한 결과를 계산합니다.";
+            this.pointInDiRatioTitle.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDiRatioLabel3
             // 
@@ -374,10 +398,12 @@
             this.pointInDiRatioLabel3.Size = new System.Drawing.Size(33, 15);
             this.pointInDiRatioLabel3.TabIndex = 29;
             this.pointInDiRatioLabel3.Text = "% 는";
+            this.pointInDiRatioLabel3.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDiRatioCheck
             // 
             this.pointInDiRatioCheck.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.pointInDiRatioCheck.CausesValidation = false;
             this.pointInDiRatioCheck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.pointInDiRatioCheck.FormattingEnabled = true;
             this.pointInDiRatioCheck.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -420,6 +446,7 @@
             this.pointInDeLabel3.Size = new System.Drawing.Size(17, 15);
             this.pointInDeLabel3.TabIndex = 33;
             this.pointInDeLabel3.Text = "%";
+            this.pointInDeLabel3.Click += new System.EventHandler(this.form1_click);
             // 
             // pointInDeLabel4
             // 
@@ -428,6 +455,7 @@
             this.pointInDeLabel4.Name = "pointInDeLabel4";
             this.pointInDeLabel4.Size = new System.Drawing.Size(0, 15);
             this.pointInDeLabel4.TabIndex = 34;
+            this.pointInDeLabel4.Click += new System.EventHandler(this.form1_click);
             // 
             // numberFormatCheck
             // 
@@ -443,6 +471,7 @@
             // multiLang
             // 
             this.multiLang.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.multiLang.CausesValidation = false;
             this.multiLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.multiLang.FormattingEnabled = true;
             this.multiLang.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -502,6 +531,7 @@
             this.Name = "Form1";
             this.Text = "퍼센트 계산기";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Click += new System.EventHandler(this.form1_click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
